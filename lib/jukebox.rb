@@ -35,11 +35,7 @@ def play(songs)
     if play_input.to_i.between?(1, 10)
       play_index = play_input.to_i -1
       puts songs[play_index]
-    else
-      puts "Invalid input, please try again"
-    end
-    
-    if play_input.include? "Phoenix - 1901"
+    elsif play_input.include? "Phoenix - 1901"
       puts "Playing Phoenix - 1901"
     elsif play_input.include? "Tokyo Police Club - Wait Up"
       puts "Playing Tokyo Police Club - Wait Up"
