@@ -75,27 +75,6 @@ def run(songs)
 end   
 
 
-#case  run_input
-  #when "list"
-   # list
-  #when "play"
-    #play
-  #when "help"
-    #help
-  #else
-    #exit_jukebox
-  #end  
-  
-  #if run_input == "help"
-    #help
-  #elsif run_input == "list"
-    #list
-  #elsif run_input == "play"
-    #play
-  #elsif run_input == "exit"
-    #exit_jukebox
-   # break
-  #end  
 
 
 
