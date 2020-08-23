@@ -1,5 +1,4 @@
 # Add your code here
-require 'pry'
 
 songs = [
   "Phoenix - 1901",
@@ -36,13 +35,10 @@ def play(songs)
       play_index = play_input.to_i - 1
       puts "Playing #{songs[play_index]}"
       
-    elsif play_input.include? songs[0 - 9] 
+    elsif songs.include? play_input
       puts "Playing #{play_input}"
       
-    #elsif play_input.include? "Phoenix - 1901"
-      #puts "Playing Phoenix - 1901"
-    #elsif play_input.include? "Tokyo Police Club - Wait Up"
-      #puts "Playing Tokyo Police Club - Wait Up"
+    
     else
       puts "Invalid input, please try again" 
     end  
@@ -53,25 +49,53 @@ def exit_jukebox
 end
   
 
-def run
+def run(songs)
+  help 
   puts "Please enter a command:"
   run_input = gets.strip
   
-  case  run_input
-  when "list"
-    list
-  when "play"
-    play
-  when "help"
-    help
-  else
-    exit_jukebox
-  end  
-  
+  loop do 
+    if run_input == "help"
+      help
+      puts "Please enter a command:"
+      run_input = gets.strip
+    elsif run_input == "list"
+      list(songs)
+      puts "Please enter a command:"
+      run_input = gets.strip
+    elsif run_input == "play"
+      play(songs)
+      puts "Please enter a command:"
+      run_input = gets.strip
+    elsif run_input == "exit"
+      exit_jukebox
+       break
+    end  
+  end
 end   
 
 
-
+#case  run_input
+  #when "list"
+   # list
+  #when "play"
+    #play
+  #when "help"
+    #help
+  #else
+    #exit_jukebox
+  #end  
+  
+  #if run_input == "help"
+    #help
+  #elsif run_input == "list"
+    #list
+  #elsif run_input == "play"
+    #play
+  #elsif run_input == "exit"
+    #exit_jukebox
+   # break
+  #end  
 
 
 
