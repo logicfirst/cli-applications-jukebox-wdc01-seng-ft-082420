@@ -33,12 +33,16 @@ def play(songs)
   play_input = gets.strip
     
     if play_input.to_i.between?(1, 10)
-      play_index = play_input.to_i -1
-      puts songs[play_index]
-    elsif play_input.include? "Phoenix - 1901"
-      puts "Playing Phoenix - 1901"
-    elsif play_input.include? "Tokyo Police Club - Wait Up"
-      puts "Playing Tokyo Police Club - Wait Up"
+      play_index = play_input.to_i - 1
+      puts "Playing #{songs[play_index]}"
+      
+    elsif play_input.include? songs[0 - 9] 
+      puts "Playing #{play_input}"
+      
+    #elsif play_input.include? "Phoenix - 1901"
+      #puts "Playing Phoenix - 1901"
+    #elsif play_input.include? "Tokyo Police Club - Wait Up"
+      #puts "Playing Tokyo Police Club - Wait Up"
     else
       puts "Invalid input, please try again" 
     end  
